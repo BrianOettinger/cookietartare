@@ -55,8 +55,12 @@ img {
 }
 
 .brand img {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 4px;
 }
 
 nav {
@@ -149,8 +153,10 @@ nav a {
 }
 
 .hero-card img {
-  width: 160px;
+  width: 180px;
   margin: 0 auto 1rem;
+  object-fit: contain;
+  border-radius: 18px;
 }
 
 .hero-card ul {
