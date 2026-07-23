@@ -188,10 +188,179 @@ nav a {
   color: var(--muted);
 }
 
+.recipe-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.recipe-feature {
+  position: relative;
+  display: flex;
+  min-height: 350px;
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+  background: var(--text);
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(49, 24, 10, 0.12);
+  isolation: isolate;
+}
+
+.recipe-feature-wide {
+  grid-column: span 2;
+  min-height: 430px;
+}
+
+.recipe-feature::after {
+  position: absolute;
+  inset: 35% 0 0;
+  z-index: -1;
+  background: linear-gradient(180deg, transparent, rgba(25, 14, 8, 0.86));
+  content: "";
+}
+
+.recipe-feature img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.recipe-feature:hover img {
+  transform: scale(1.04);
+}
+
+.recipe-feature-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.recipe-feature .eyebrow {
+  margin-bottom: 0.45rem;
+  color: #ffd7a8;
+}
+
+.recipe-feature strong {
+  max-width: 540px;
+  font-size: clamp(1.45rem, 3vw, 2.45rem);
+  line-height: 1.08;
+}
+
+.recipe-feature-copy > span:not(.eyebrow):not(.recipe-feature-link) {
+  max-width: 520px;
+  margin-top: 0.65rem;
+  color: #fff3e7;
+}
+
+.recipe-feature-link {
+  margin-top: 1.2rem;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+}
+
+.recipe-library {
+  background: #fff8ee;
+}
+
+.recipe-sheet {
+  scroll-margin-top: 1rem;
+  margin-top: 1rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(49, 24, 10, 0.05);
+}
+
+.recipe-sheet-heading {
+  max-width: 720px;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.recipe-sheet-heading .eyebrow {
+  margin-bottom: 0.4rem;
+  font-size: 0.7rem;
+}
+
+.recipe-sheet-heading h3 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.recipe-sheet-heading p:last-child {
+  margin: 0;
+  color: var(--muted);
+}
+
+.recipe-sheet-columns {
+  display: grid;
+  grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.28fr);
+  gap: 2rem;
+  padding-top: 1.25rem;
+}
+
+.recipe-sheet h4 {
+  margin: 0 0 0.4rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.tool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tool-card h3 {
+  margin-bottom: 0.45rem;
+}
+
+.tool-card p {
+  margin-top: 0;
+  color: var(--muted);
+}
+
+.tool-index {
+  margin-bottom: 0.85rem;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tool-card .btn {
+  margin-top: auto;
+}
+
+.shop-note {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
 }
 
 .card {
@@ -292,8 +461,27 @@ nav a {
 @media (max-width: 800px) {
   .hero-content,
   .card-grid,
-  .video-layout {
+  .video-layout,
+  .tool-grid {
     grid-template-columns: 1fr;
+  }
+
+  .recipe-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recipe-feature-wide {
+    grid-column: auto;
+  }
+
+  .recipe-feature,
+  .recipe-feature-wide {
+    min-height: 330px;
+  }
+
+  .recipe-sheet-columns {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .nav,
