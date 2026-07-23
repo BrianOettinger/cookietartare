@@ -42,4 +42,6 @@ To use it:
 ## Notes
 
 - The site is a static HTML/CSS landing page.
-- You can expand it with more pages, recipes, and shop links.
+- `index.html` is the front door, with dedicated `recipes.html`, `atelier.html`, and `swag.html` pages.
+- The swag page is currently an interest and product-planning page. A real drop-ship storefront still needs a fulfillment partner, production-ready logo files, product photography, pricing, and checkout integration.
+- GitHub Pages automatically deploys every push to `main` through `.github/workflows/deploy-pages.yml`.

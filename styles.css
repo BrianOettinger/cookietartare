@@ -75,6 +75,42 @@ nav a {
   font-weight: 600;
 }
 
+nav a:hover,
+nav a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.page-hero {
+  padding: 1.25rem 0 3.5rem;
+  background: linear-gradient(135deg, #fff4e8 0%, #f9dfc6 100%);
+}
+
+.page-hero .nav {
+  padding-bottom: 3rem;
+}
+
+.page-hero-copy {
+  max-width: 780px;
+}
+
+.page-hero-copy h1 {
+  max-width: 740px;
+  margin: 0 0 1rem;
+  font-size: clamp(2.3rem, 5vw, 4.4rem);
+  line-height: 1.03;
+}
+
+.page-hero-copy p:last-child {
+  max-width: 640px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.swag-hero {
+  background: linear-gradient(135deg, #f5e3d2 0%, #e8b88f 100%);
+}
+
 .hero-content {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -363,6 +399,88 @@ nav a {
   font-size: 0.88rem;
 }
 
+.swag-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.swag-panel {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: var(--text);
+  border-radius: 18px;
+  color: #fff8ee;
+}
+
+.swag-panel h2 {
+  max-width: 560px;
+  margin: 0 0 1rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.08;
+}
+
+.swag-panel p {
+  max-width: 560px;
+  color: #f5dcca;
+}
+
+.swag-panel .eyebrow {
+  color: #ffd7a8;
+}
+
+.swag-panel .btn-primary {
+  margin-top: 1rem;
+  background: #ffd7a8;
+  color: var(--text);
+}
+
+.swag-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.swag-list li {
+  padding: 1.1rem 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.swag-list strong,
+.swag-list span {
+  display: block;
+}
+
+.swag-list strong {
+  margin-bottom: 0.25rem;
+}
+
+.swag-list span {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.interest-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  max-width: 560px;
+  margin-top: 1.5rem;
+}
+
+.interest-form input {
+  min-width: 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  font: inherit;
+}
+
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -482,6 +600,11 @@ nav a {
   .recipe-sheet-columns {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .swag-grid,
+  .interest-form {
+    grid-template-columns: 1fr;
   }
 
   .nav,
